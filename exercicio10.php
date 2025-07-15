@@ -3,55 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informa soma pares entre dois numeros</title>
+    <title>Informa a sequencia Fibonacci entre numeros</title>
 </head>
 
 <body>
 
     <form method="POST" action="">
-        <label for="somapares">mostra a soma dos pares do numero informado:</label>
-        <input type="number" id="somapares1" name="somapares1" required>
-        <input type="number" id="somapares2" name="somapares2" required>
-        <button type="submit" name="informapares">informar</button>
+        <label for="fibonacci">mostra a sequencia Fibonacci entre 1 e o numero informado:</label>
+        <input type="number" id="fibonacci" name="fibonacci" required>
+        <button type="submit" name="informafibonacci">informar</button>
     </form>
 
     <?php
 
-    $numero1 = 0;
-    $numero2 = 0;
-
+    $numero = 0;
     $b = 0;
-
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-        if (isset($_POST['informapares'])) {
-            $numero1 = (int)$_POST['somapares1'];
-            $numero2 = (int)$_POST['somapares2'];
-
-            if ($numero1 <= 0 || $numero2 <= 0) {
-                echo ("bote numeros inteiros e diferentes de zero");
+        if (isset($_POST['informafibonacci'])) {
+            $numero = (int)$_POST['fibonacci'];
+            if ($numero <= 0) {
+                echo ("bote um numero inteiro e diferente de zero");
             } else {
+                
+                echo ("a sequencia Fibonacci entre 1 a $numero são:");
+                
+                for ($i = 1; $i  <=  ($numero - 1); $i++)
+                    if ($i % 2 == 0) {
+                        $b++;
+                    }
 
-                echo ("a soma dos pares entres $numero1 e o $numero2 são: ");
-
-                if ($numero1 < $numero2) {
-                    for ($i = $numero1; $i  <=  ($numero2 - 1); $i++)
-                        if ($i % 2 == 0) {
-                            $b += $i;
-                        }
-
-                    echo ($b);
-                } elseif ($numero1 == $numero2) {
-                    echo ('os dois numeros são iguais.');
-                    break;
-                } else {
-                    for ($i = $numero2; $i  <=  ($numero1 - 1); $i++)
-                        if ($i % 2 == 0) {
-                            $b += $i;
-                        }
-
-                    echo ($b);
-                }
+                echo ($b);
             }
         }
     }
