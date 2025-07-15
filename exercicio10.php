@@ -32,8 +32,9 @@
                 echo ("bote numeros inteiros e diferentes de zero");
             } else {
 
+                echo ("a soma dos pares entres $numero1 e o $numero2 são: ");
+
                 if ($numero1 < $numero2) {
-                    echo ("a soma dos pares entres $numero1 e o $numero2 são: ");
                     for ($i = $numero1; $i  <=  ($numero2 - 1); $i++)
                         if ($i % 2 == 0) {
                             $b += $i;
@@ -42,8 +43,8 @@
                     echo ($b);
                 } elseif ($numero1 == $numero2) {
                     echo ('os dois numeros são iguais.');
+                    break;
                 } else {
-                    echo ("a soma dos pares entres $numero2 e o $numero1 são: ");
                     for ($i = $numero2; $i  <=  ($numero1 - 1); $i++)
                         if ($i % 2 == 0) {
                             $b += $i;
