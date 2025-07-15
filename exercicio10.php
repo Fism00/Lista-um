@@ -32,8 +32,6 @@
 
         if (isset($_POST['informafibonacci'])) {
             $numero = (int)$_POST['fibonacci'];
-
-
             echo "o número $numero na sequencia de fibonacci é: " . fibonaccionado($numero);
         }
     }
