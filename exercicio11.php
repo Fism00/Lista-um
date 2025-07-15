@@ -1,32 +1,38 @@
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informa palindromo</title>
 </head>
+
 <body>
 
-   <form method="POST" action="">
+    <form method="POST" action="">
         <label for="palindromo">informe uma palavra:</label>
         <input type="text" id="palindromo" name="palindromo" required>
         <button type="submit" name="informapalindromo">informar</button>
-   </form>
+    </form>
 
-   <?php
+    <?php
 
-   $palavra;
-   
-   if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $palavra;
 
-    if(isset($_POST['palindromo'])){
-        $palavra = $_POST['palindromo'];
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-        
+        if (isset($_POST['palindromo'])) {
+            $palavra = $_POST['palindromo'];
+
+            if (strrev($palavra) == $palavra) {
+                echo ("a palavra $palavra é um palindromo");
+            } else {
+                echo ("a palavra $palavra não é um palindromo");
+            }
+        }
     }
 
-   }
+    ?>
 
-   ?>
- 
 </body>
+
 </html>
