@@ -19,7 +19,7 @@
     $soma = 0;
 
     for ($i = 1; $i < $n; $i++) {
-        if ($n % $i === 0) {
+        if ($n % $i == 0) {
             $soma += $i;
         }
     }
@@ -28,7 +28,7 @@
 
    if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-    if(isset($_POST['amizade'])){
+    if(isset($_POST['informa'])){
         $num1 = (int)$_POST['amizade1'];
         $num2 = (int)$_POST['amizade2'];
 
